@@ -1,0 +1,5 @@
+openai>=1.60
+anthropic>=0.42
+click>=8.1
+rich>=13.7
+python-dotenv>=1.0
