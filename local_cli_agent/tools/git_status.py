@@ -1,7 +1,7 @@
 """
 Tool: git_status
 
-Shows the current Git status of the workspace — branch, staged changes,
+Shows the current Git status of the workspace - branch, staged changes,
 modified files, and untracked files.
 """
 
@@ -23,7 +23,7 @@ class GitStatusTool(BaseTool):
     @property
     def description(self) -> str:
         return (
-            "Show the current Git status of the workspace — modified files, "
+            "Show the current Git status of the workspace - modified files, "
             "untracked files, current branch, and staging area. "
             f"Workspace: {self._workspace_dir}"
         )

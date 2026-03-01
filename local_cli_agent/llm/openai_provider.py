@@ -1,10 +1,10 @@
 """
-OpenAI provider — wraps the OpenAI chat-completions API with tool calling.
+OpenAI provider - wraps the OpenAI chat-completions API with tool calling.
 
 OpenAI tool-calling flow:
   1. Send messages + tool definitions via the ``tools`` parameter.
   2. If the model wants to call tools, the assistant message includes
-     ``tool_calls`` — each with an ``id``, function ``name``, and JSON
+     ``tool_calls`` - each with an ``id``, function ``name``, and JSON
      ``arguments``.
   3. We execute the tools locally, then append one ``role: "tool"`` message
      **per tool call**, keyed by ``tool_call_id``.

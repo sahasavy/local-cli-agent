@@ -74,7 +74,7 @@ class WebSearchTool(BaseTool):
         except urllib.error.HTTPError as exc:
             return f"Error: Tavily API returned HTTP {exc.code}."
         except urllib.error.URLError as exc:
-            return f"Error: could not reach Tavily API — {exc.reason}"
+            return f"Error: could not reach Tavily API - {exc.reason}"
         except Exception as exc:
             return f"Error performing web search: {exc}"
 
