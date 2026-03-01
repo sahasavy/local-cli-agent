@@ -1,19 +1,19 @@
 """
-agent.py — The core agent loop.
+agent.py - The core agent loop.
 
 This is the most important file in the project.  It implements the
 fundamental pattern behind *every* LLM-based agent:
 
     ┌─────────────────────────────────────────────────────────────┐
-    │                        AGENT LOOP                          │
+    │                        AGENT LOOP                           │
     │                                                             │
     │  1.  Receive natural-language input from the user           │
-    │  2.  Send it (along with tool definitions) to the LLM      │
+    │  2.  Send it (along with tool definitions) to the LLM       │
     │  3.  The LLM either:                                        │
     │        a) returns a final text response  →  done            │
     │        b) requests one or more tool calls                   │
     │  4.  Execute the requested tools locally                    │
-    │  5.  Feed the tool results back to the LLM                 │
+    │  5.  Feed the tool results back to the LLM                  │
     │  6.  Go to step 3                                           │
     └─────────────────────────────────────────────────────────────┘
 
@@ -35,9 +35,9 @@ Your job is to understand the user's natural language requests and use the
 available tools to fulfil them.
 
 Capabilities:
-- **File Search** — find files by name pattern or text content in the workspace.
-- **Note Creation** — generate and save well-structured markdown notes.
-- **File Reading** — read file contents for summarisation or analysis.
+- **File Search** - find files by name pattern or text content in the workspace.
+- **Note Creation** - generate and save well-structured markdown notes.
+- **File Reading** - read file contents for summarisation or analysis.
 
 Guidelines:
 - Use tools whenever the task involves the filesystem.

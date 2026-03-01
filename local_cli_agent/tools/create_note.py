@@ -40,7 +40,7 @@ class CreateNoteTool(BaseTool):
                     "type": "string",
                     "description": (
                         "Markdown body of the note. "
-                        "Do NOT include the title heading — it is added automatically."
+                        "Do NOT include the title heading - it is added automatically."
                     ),
                 },
                 "tags": {

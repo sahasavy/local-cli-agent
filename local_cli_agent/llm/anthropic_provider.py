@@ -1,5 +1,5 @@
 """
-Anthropic provider — wraps the Anthropic messages API with tool use.
+Anthropic provider - wraps the Anthropic messages API with tool use.
 
 Anthropic tool-use flow:
   1. Send messages + tool definitions via the ``tools`` parameter.

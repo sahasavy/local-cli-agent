@@ -3,7 +3,7 @@ Tool: calculator
 
 Safely evaluates mathematical expressions.
 Supports basic arithmetic, exponentiation, and common math functions.
-No use of eval() — only whitelisted operations are allowed.
+No use of eval() - only whitelisted operations are allowed.
 """
 
 import ast

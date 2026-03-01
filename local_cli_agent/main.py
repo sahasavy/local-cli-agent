@@ -112,7 +112,7 @@ def _print_help() -> None:
     help="Run a single query and exit (non-interactive mode).",
 )
 def main(provider: str | None, query: str | None) -> None:
-    """Local CLI Agent — a natural-language powered assistant."""
+    """Local CLI Agent - a natural-language powered assistant."""
 
     provider_name = provider or Config.DEFAULT_PROVIDER
 

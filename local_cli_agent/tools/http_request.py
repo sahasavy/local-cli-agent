@@ -77,7 +77,7 @@ class HttpRequestTool(BaseTool):
             error_body = exc.read().decode("utf-8", errors="replace")[:1000]
             return f"HTTP {exc.code} {exc.reason}\n\n{error_body}"
         except urllib.error.URLError as exc:
-            return f"Error: could not connect — {exc.reason}"
+            return f"Error: could not connect - {exc.reason}"
         except Exception as exc:
             return f"Error: {exc}"
 
