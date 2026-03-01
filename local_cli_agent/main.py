@@ -16,6 +16,15 @@ from .llm.openai_provider import OpenAIProvider
 from .tools.create_note import CreateNoteTool
 from .tools.file_search import FileSearchTool
 from .tools.read_file import ReadFileTool
+from .tools.list_directory import ListDirectoryTool
+from .tools.word_count import WordCountTool
+from .tools.run_shell import RunShellTool
+from .tools.web_search import WebSearchTool
+from .tools.calculator import CalculatorTool
+from .tools.git_status import GitStatusTool
+from .tools.write_file import WriteFileTool
+from .tools.http_request import HttpRequestTool
+from .tools.database_query import DatabaseQueryTool
 
 console = Console()
 
@@ -47,6 +56,15 @@ def _build_agent(provider_name: str) -> Agent:
         FileSearchTool(workspace_dir=Config.WORKSPACE_DIR),
         CreateNoteTool(notes_dir=Config.NOTES_DIR),
         ReadFileTool(workspace_dir=Config.WORKSPACE_DIR),
+        ListDirectoryTool(workspace_dir=Config.WORKSPACE_DIR),
+        WordCountTool(),
+        RunShellTool(workspace_dir=Config.WORKSPACE_DIR),
+        WebSearchTool(api_key=Config.TAVILY_API_KEY),
+        CalculatorTool(),
+        GitStatusTool(workspace_dir=Config.WORKSPACE_DIR),
+        WriteFileTool(workspace_dir=Config.WORKSPACE_DIR),
+        HttpRequestTool(),
+        DatabaseQueryTool(database_path=Config.DATABASE_PATH),
     ]
 
     return Agent(
@@ -67,7 +85,13 @@ def _print_help() -> None:
             '  "Find all Python files in my workspace"\n'
             '  "Create a note about Docker best practices"\n'
             '  "Summarise the file report.txt"\n'
-            '  "Search for files containing TODO"\n',
+            '  "Search for files containing TODO"\n'
+            '  "Run ls -la in my workspace"\n'
+            '  "What is the current git status?"\n'
+            '  "Calculate sqrt(144) + 2**10"\n'
+            '  "Search the web for Python 3.12 new features"\n'
+            '  "Write a hello.py file with a Hello World script"\n'
+            '  "Fetch the JSON from https://api.example.com/data"\n',
             title="Help",
             border_style="green",
         )

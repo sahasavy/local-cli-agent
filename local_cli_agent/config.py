@@ -20,3 +20,8 @@ class Config:
     NOTES_DIR: Path = Path(os.getenv("NOTES_DIR", str(Path.home() / "notes")))
 
     MAX_TOOL_ITERATIONS: int = int(os.getenv("MAX_TOOL_ITERATIONS", "10"))
+
+    TAVILY_API_KEY: str = os.getenv("TAVILY_API_KEY", "")
+    DATABASE_PATH: Path | None = (
+        Path(os.getenv("DATABASE_PATH")) if os.getenv("DATABASE_PATH") else None
+    )
